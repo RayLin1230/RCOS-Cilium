@@ -45,3 +45,11 @@ I add the official HashiCorp repository to your system.
 echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] \
 https://apt.releases.hashicorp.com $(lsb_release -cs) main" | \
 sudo tee /etc/apt/sources.list.d/hashicorp.list
+
+I download the package information from HashiCorp.
+sudo apt update
+
+I install Terraform from the new repository.
+sudo apt-get install terraform
+
+There was an error when I ran the previous command. I googled to try to find a solution for the error I'm having.
