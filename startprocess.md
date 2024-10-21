@@ -13,3 +13,5 @@ As instructed I opened the onboarding.md file and started reading it. As implied
 The document first introduces me to Cilium, Kubernetes, and Terraform. 
 
 Kubernetes are a platform to automate the deployment and management of containerized applications. Containers are self-contained units that hold everything an app needs to run, ensuring consistent behavior across environments. 
+
+Cilium helps manage data communication between applications in a Kubernetes cluster, enhancing security, visibility, and scalability. Cilium secures traffic by controlling which applications can communicate and provides monitoring of traffic flow within the cluster.
