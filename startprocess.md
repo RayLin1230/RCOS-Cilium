@@ -30,3 +30,9 @@ The document instructs me to install Terraform and provides a link to me. I clic
 
 I installed the gnupg, software-properties-common, and curl packages as they are needed before I can install HashiCorp's Debian package repository. 
 sudo apt-get update && sudo apt-get install -y gnupg software-properties-common
+
+I installed the HashiCorp GRP key.
+wget -O- https://apt.releases.hashicorp.com/gpg | \
+gpg --dearmor | \
+sudo tee /usr/share/keyrings/hashicorp-archive-keyring.gpg > /dev/null
+
