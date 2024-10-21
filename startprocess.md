@@ -8,3 +8,8 @@ Sam instructed us to follow the instructions in the startup.md file in the Heath
 
 The document began with recommending me to use Linux or WSL. I have used Ubuntu before because of a previous RCOS project I've done. Ubuntu is Linux/WSL, so I'll use that to work on this project. The document also stated I should read the onboarding.md before continuing on.
 
+As instructed I opened the onboarding.md file and started reading it. As implied by the name of the file, the purpose of the file is to help newcomers like me to go through the onboarding process for the project.
+
+The document first introduces me to Cilium, Kubernetes, and Terraform. 
+
+Kubernetes are a platform to automate the deployment and management of containerized applications. Containers are self-contained units that hold everything an app needs to run, ensuring consistent behavior across environments. 
