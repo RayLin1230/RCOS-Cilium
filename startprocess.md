@@ -17,3 +17,9 @@ Kubernetes are a platform to automate the deployment and management of container
 Cilium helps manage data communication between applications in a Kubernetes cluster, enhancing security, visibility, and scalability. Cilium secures traffic by controlling which applications can communicate and provides monitoring of traffic flow within the cluster.
 
 Terraform automates infrastructure management using Infrastructure as Code (IaC). It defines infrastructure (servers, networks) using configuration files in HCL (HashiCorp Configuration Language). It uses providers (like Azure, AWS) to deploy infrastructure. In the context of the project, Terraform creates a Kubernetes cluster on Azure Kubernetes Service (AKS), where Cilium is deployed to manage networking.
+
+The document then showcases the files breakdown to me.
+
+main.tf: Defines the core infrastructure components like resource groups, virtual networks, subnets, and Kubernetes clusters.
+variables.tf: Holds customizable deployment variables such as client credentials and location.
+versions.tf: Specifies provider versions and ensures compatibility with Terraform.
