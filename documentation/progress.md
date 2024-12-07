@@ -52,7 +52,7 @@ sudo apt update
 I install Terraform from the new repository.
 sudo apt-get install terraform
 
-The document instructs me to install Cilium CLI and provides me a link. I click on the link and follow the instructiosn to install the latest version of the Cilium CLI for Linux.
+The document instructs me to install Cilium CLI and provides me a link. I click on the link and follow the instructions to install the latest version of the Cilium CLI for Linux.
 CILIUM_CLI_VERSION=$(curl -s https://raw.githubusercontent.com/cilium/cilium-cli/main/stable.txt)
 CLI_ARCH=amd64
 if [ "$(uname -m)" = "aarch64" ]; then CLI_ARCH=arm64; fi
@@ -60,3 +60,16 @@ curl -L --fail --remote-name-all https://github.com/cilium/cilium-cli/releases/d
 sha256sum --check cilium-linux-${CLI_ARCH}.tar.gz.sha256sum
 sudo tar xzvfC cilium-linux-${CLI_ARCH}.tar.gz /usr/local/bin
 rm cilium-linux-${CLI_ARCH}.tar.gz{,.sha256sum}
+
+The document instructs me to install Kubectl and miniKube and provides me a link. I click on the link and follow the instructions. 
+
+The document instructs me on how to set up the environment and I attempt to do so. 
+In the command line, I run:
+terraform init - this sets up Terraform to run the configuration by initializing the backend and installing the plugins for the providers defined in the configuration.
+terraform plan - displays what actions Terraform will perform when I apply the configuration. It doesn't make any changes to real resources but shows me a preview of what will happen.
+terraform apply - Terraform asked me to confirm that I want to perform the actions detailed in the plan. I typed yes to proceed. This process took several minutes as Terraform worked to set up my EKS cluster and all the associated resources
+
+The Terraform apply was successful, so I configured kubectl to interact with my new EKS cluster. I used the AKS CLI to update my kubeconfig file with the context of my new cluster: 
+az aks get-credentials --resource-group RCOS-Cilium_group --name test-aks
+I verified that I can connect to my Kubernetes cluster by running: kubectl get nodes
+Everything seemed to work, so to avoid extra costs I ran: terraform destroy
