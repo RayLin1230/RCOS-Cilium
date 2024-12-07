@@ -18,8 +18,7 @@ Cilium helps manage data communication between applications in a Kubernetes clus
 
 Terraform automates infrastructure management using Infrastructure as Code (IaC). It defines infrastructure (servers, networks) using configuration files in HCL (HashiCorp Configuration Language). It uses providers (like Azure, AWS) to deploy infrastructure. In the context of the project, Terraform creates a Kubernetes cluster on Azure Kubernetes Service (AKS), where Cilium is deployed to manage networking.
 
-The document then showcases the files breakdown to me.
-
+The document then showcases the files breakdown to me:
 main.tf: Defines the core infrastructure components like resource groups, virtual networks, subnets, and Kubernetes clusters.
 variables.tf: Holds customizable deployment variables such as client credentials and location.
 versions.tf: Specifies provider versions and ensures compatibility with Terraform.
@@ -27,29 +26,23 @@ versions.tf: Specifies provider versions and ensures compatibility with Terrafor
 After I finished reading the onboarding.md and understand the basics of the project project, I went back to the startupd.md to continue going through the document. 
 
 The document instructs me to install Terraform and provides a link to me. I click on the link and follow the instructions provided to me for a Ubuntu/Linux user.
-
-I installed the gnupg, software-properties-common, and curl packages as they are needed before I can install HashiCorp's Debian package repository. 
+I installed the gnupg, software-properties-common, and curl packages as they are needed before I can install HashiCorp's Debian package repository:
 sudo apt-get update && sudo apt-get install -y gnupg software-properties-common
-
-I installed the HashiCorp GRP key.
+I installed the HashiCorp GRP key:
 wget -O- https://apt.releases.hashicorp.com/gpg | \
 gpg --dearmor | \
 sudo tee /usr/share/keyrings/hashicorp-archive-keyring.gpg > /dev/null
-
-I verify the key's fingerprint.
+I verify the key's fingerprint:
 gpg --no-default-keyring \
 --keyring /usr/share/keyrings/hashicorp-archive-keyring.gpg \
 --fingerprint
-
-I add the official HashiCorp repository to my system.
+I add the official HashiCorp repository to my system:
 echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] \
 https://apt.releases.hashicorp.com $(lsb_release -cs) main" | \
 sudo tee /etc/apt/sources.list.d/hashicorp.list
-
-I download the package information from HashiCorp.
+I download the package information from HashiCorp:
 sudo apt update
-
-I install Terraform from the new repository.
+I installed Terraform from the new repository:
 sudo apt-get install terraform
 
 The document instructs me to install Cilium CLI and provides me a link. I click on the link and follow the instructions to install the latest version of the Cilium CLI for Linux.
@@ -71,5 +64,30 @@ terraform apply - Terraform asked me to confirm that I want to perform the actio
 
 The Terraform apply was successful, so I configured kubectl to interact with my new EKS cluster. I used the AKS CLI to update my kubeconfig file with the context of my new cluster: 
 az aks get-credentials --resource-group RCOS-Cilium_group --name test-aks
-I verified that I can connect to my Kubernetes cluster by running: kubectl get nodes
-Everything seemed to work, so to avoid extra costs I ran: terraform destroy
+I verified that I can connect to my Kubernetes cluster by running: 
+kubectl get nodes
+
+Everything seemed to work and I successfully set up Cilium to run within a Kubernetes environment using Minikube, ensuring that both systems are working together. To avoid extra costs I ran: 
+terraform destroy
+
+I downloaded the latest version of Microsoft Azure for Linux, specifiically for Ubuntu, by following the instructions on this site: https://learn.microsoft.com/en-us/cli/azure/install-azure-cli
+I get the packages needed for the installation process:
+sudo apt-get update
+sudo apt-get install apt-transport-https ca-certificates curl gnupg lsb-release
+I download and install the Microsoft signing key:
+sudo mkdir -p /etc/apt/keyrings
+curl -sLS https://packages.microsoft.com/keys/microsoft.asc |
+  gpg --dearmor | sudo tee /etc/apt/keyrings/microsoft.gpg > /dev/null
+sudo chmod go+r /etc/apt/keyrings/microsoft.gpg
+I add the Azure CLI software repository:
+AZ_DIST=$(lsb_release -cs)
+echo "Types: deb
+URIs: https://packages.microsoft.com/repos/azure-cli/
+Suites: ${AZ_DIST}
+Components: main
+Architectures: $(dpkg --print-architecture)
+Signed-by: /etc/apt/keyrings/microsoft.gpg" | sudo tee /etc/apt/sources.list.d/azure-cli.sources
+I update repository information and install the azure-cli package:
+sudo apt-get update
+sudo apt-get install azure-cli
+Everything seems to be in working order.
