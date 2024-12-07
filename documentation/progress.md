@@ -110,6 +110,9 @@ https://hewlettpackard.github.io/netperf/doc/netperf.html#TCP_005fMAERTS
 I was given a link to the github actions/workflow that were going to be adapting for use on this project, so I read it: 
 https://github.com/cilium/cilium/tree/main/.github/workflows
 I looked into Prometheus(5) and Grafana(6). I tried to understand how it works and how it applies to our project. By combining the two, we can visualize the data, along with all the features from Prometheus.
+I was recommended to look at workflows that are labeled conformance Cloud Provider.yaml as it was relevant, so I did so: 
+https://github.com/cilium/cilium-perf-networking
+We were told by the project leads that they are still waiting for word from the Isolvaent employee on how we're getting access to Cilium repo, so we should just keep famaliarizing yourslef with the workflows and netperf in the meantime.
 
 *About*
 (1) Cilium is Kubernetes Cloud Network Interface(CNI). It helps manage data communication between applications in a Kubernetes cluster, enhancing security, visibility, and scalability. It does so by offering high-performance networking capabilities, including advanced routing, load balancing, and service discovery. Cilium secures traffic by controlling which applications can communicate and provides monitoring of traffic flow within the cluster.Specifically, it implements fine-grained network policies and enforces layer 7 (application layer) security controls. This enables administrators to define and enforce security policies based on application-layer attributes, such as HTTP headers or gRPC methods.  Cilium provides rich observability features by capturing detailed network traffic telemetry and integrating with monitoring and tracing systems like Prometheus and Jaeger. This enables operators to gain insights into network behavior and troubleshoot issues effectively.
