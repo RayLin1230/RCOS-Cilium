@@ -126,6 +126,15 @@ When running any terraform apply or terraform destroy it will ask for variables 
 The leads provided the vars file.
 The RPI Expo was coming up, so we were instructed by the RCOS coordinators to make a presentation poster for the Expo.
 
+We were suppose to present our Expo today(12/3/24) at the Armory. 
+However, there was an issue apparently with scheduling and so we had to move it to Friday(12/6/24).
+The first half of the 2 hour session would be the projects that were suppose to present today, including Cilium. 
+The second half would be the projects that were suppose to present Friday. 
+
+We presented Cilium today, a lot of people came by and were interested. 
+After the first hour, we finished presenting and were instructed to look at and peer evalaute at least 5 projects.
+There were a lot of interesting projects, such as a Minecraft Mod project. 
+
 *About*
 (1) Cilium is Kubernetes Cloud Network Interface(CNI). It helps manage data communication between applications in a Kubernetes cluster, enhancing security, visibility, and scalability. It does so by offering high-performance networking capabilities, including advanced routing, load balancing, and service discovery. Cilium secures traffic by controlling which applications can communicate and provides monitoring of traffic flow within the cluster.Specifically, it implements fine-grained network policies and enforces layer 7 (application layer) security controls. This enables administrators to define and enforce security policies based on application-layer attributes, such as HTTP headers or gRPC methods.  Cilium provides rich observability features by capturing detailed network traffic telemetry and integrating with monitoring and tracing systems like Prometheus and Jaeger. This enables operators to gain insights into network behavior and troubleshoot issues effectively.
 
