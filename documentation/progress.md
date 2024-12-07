@@ -56,7 +56,7 @@ sha256sum --check cilium-linux-${CLI_ARCH}.tar.gz.sha256sum
 sudo tar xzvfC cilium-linux-${CLI_ARCH}.tar.gz /usr/local/bin
 rm cilium-linux-${CLI_ARCH}.tar.gz{,.sha256sum}
 
-The document instructs me to install Kubectl and miniKube and provides me a link. 
+The document instructs me to install Kubectl(9) and miniKube and provides me a link. 
 I click on the link and follow the instructions. 
 
 The document instructs me on how to set up the environment and I attempt to do so. 
@@ -207,3 +207,10 @@ Netperf is a command-line tool designed for benchmarking network performance, me
 It follows a client-server model, where the client initiates tests, and the server responds, providing insights into network performance. 
 Netperf is widely used for network performance testing in data centers, containerized environments, and cloud infrastructures, helping to identify bottlenecks and optimize configurations. 
 Lightweight and highly configurable, it's an essential tool for network engineers and system administrators.
+
+(9)
+Kubectl is the command-line tool used to interact with Kubernetes.
+It allows users to manage Kubernetes resources by creating, updating, deleting, and inspecting objects such as pods, services, deployments, and configurations.
+With kubectl, you can deploy applications, view logs, run diagnostics, and manage network policies. 
+Its flexibility and comprehensive functionality make it an essential tool for developers and administrators working with Kubernetes to ensure efficient application management and cluster operations.
+
