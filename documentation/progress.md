@@ -91,3 +91,7 @@ I update repository information and install the azure-cli package:
 sudo apt-get update
 sudo apt-get install azure-cli
 Everything seems to be in working order.
+
+I logged into the Microsoft Azure student account. 
+I joined the HCP Terraform organization so that I could initialize that on my system.
+I successfully connected with the HCP Terraform by HashiCorp. I am working on connecting to Azure to observe the command outputs and assess how the setup operates in a cloud setting.
