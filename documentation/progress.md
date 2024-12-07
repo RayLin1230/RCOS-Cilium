@@ -94,4 +94,10 @@ Everything seems to be in working order.
 
 I logged into the Microsoft Azure student account. 
 I joined the HCP Terraform organization so that I could initialize that on my system.
-I successfully connected with the HCP Terraform by HashiCorp. I am working on connecting to Azure to observe the command outputs and assess how the setup operates in a cloud setting.
+I successfully connected with the HCP Terraform by HashiCorp. 
+I was working on connecting to Microsoft Azure to observe the command outputs and assess how the setup operates in a cloud setting.
+
+There were some issues with connecting to Microsfot Azure, as during the time I took to connect to Microsoft Azure we had apparently run out of credits for Microsoft Azure, so I wouldn't be able to conduct any testing. 
+The project leads Sam and Ben said they would be working on getting credits by talking to an employee at Isovalent. 
+We were instructed to look at the Cilium Performance Benchmark documentation in the meantime as it held useful information that we will be doing, so I did so: 
+https://docs.cilium.io/en/stable/operations/performance/benchmark/
