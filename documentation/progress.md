@@ -114,6 +114,18 @@ I was recommended to look at workflows that are labeled conformance Cloud Provid
 https://github.com/cilium/cilium-perf-networking
 We were told by the project leads that they are still waiting for word from the Isolvaent employee on how we're getting access to Cilium repo, so we should just keep famaliarizing yourslef with the workflows and netperf in the meantime.
 
+We were told by the project leads that Microsoft Azure was fully back up and we were all set to apply and perform performance testing, so I followed the instructions.
+The leads said they had changed the HCP environment to be isolated locally, meaning that the environment should no longer be shared.
+Since the subscription was changed, the leads said we had do have to make sure you do the following:
+Login using the new subscription:
+az account set --subscription "<>"
+Our local terraform state files must be updated with the new subscription:
+terraform state pull
+When running any terraform apply or terraform destroy it will ask for variables and we were told to just add the flag: 
+-var-file="vars.tfvars"
+The leads provided the vars file.
+The RPI Expo was coming up, so we were instructed by the RCOS coordinators to make a presentation poster for the Expo.
+
 *About*
 (1) Cilium is Kubernetes Cloud Network Interface(CNI). It helps manage data communication between applications in a Kubernetes cluster, enhancing security, visibility, and scalability. It does so by offering high-performance networking capabilities, including advanced routing, load balancing, and service discovery. Cilium secures traffic by controlling which applications can communicate and provides monitoring of traffic flow within the cluster.Specifically, it implements fine-grained network policies and enforces layer 7 (application layer) security controls. This enables administrators to define and enforce security policies based on application-layer attributes, such as HTTP headers or gRPC methods.  Cilium provides rich observability features by capturing detailed network traffic telemetry and integrating with monitoring and tracing systems like Prometheus and Jaeger. This enables operators to gain insights into network behavior and troubleshoot issues effectively.
 
