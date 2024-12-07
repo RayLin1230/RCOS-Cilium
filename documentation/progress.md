@@ -101,3 +101,14 @@ There were some issues with connecting to Microsfot Azure, as during the time I 
 The project leads Sam and Ben said they would be working on getting credits by talking to an employee at Isovalent. 
 We were instructed to look at the Cilium Performance Benchmark documentation in the meantime as it held useful information that we will be doing, so I did so: 
 https://docs.cilium.io/en/stable/operations/performance/benchmark/
+
+We were instucted to download Cilium Netperf, so I did so.
+I downloaded Cilium Netperf for Linux:
+sudo apt install netperf
+There was some issues with running the Cilium Netperf, but I worked with teammates to figure out why.
+Apparently, I did not install Cilium Cli correctly and Netperf is built in with the Cli, so I needed to isntall it correctly to be able to run Netperf correctly. 
+I uninstalled Cilium Cli and followed the instructions on how to correctly install the Cli with the link I was given: 
+https://github.com/cilium/cilium-cli 
+Netperf seemed to work correctly now.
+I was given documentation about Cilium Netperf, so I read it to better understand it and its role in benchmarking and performance testing:
+https://hewlettpackard.github.io/netperf/doc/netperf.html#TCP_005fMAERTS
