@@ -116,7 +116,7 @@ We were instructed to look at the Cilium Performance Benchmark documentation in 
 https://docs.cilium.io/en/stable/operations/performance/benchmark/
 
 We were instucted to download Cilium Netperf, so I did so.
-I downloaded Netperf for Linux:
+I downloaded Netperf(8) for Linux:
 sudo apt install netperf
 There was some issues with running Netperf, but I worked with teammates to figure out why.
 Apparently, I did not install Cilium Cli correctly and Netperf is built in with the Cli, so I needed to isntall it correctly to be able to run Netperf correctly. 
@@ -201,3 +201,9 @@ The Cilium CLI (Command-Line Interface) is a tool for managing and interacting w
 It simplifies tasks such as deploying and upgrading Cilium, testing connectivity, managing network policies, and monitoring network traffic. 
 With commands for installation, diagnostics, observability, and policy enforcement, the CLI helps ensure seamless networking and secure communication between workloads. 
 It integrates with tools like Hubble for advanced traffic monitoring and flow visualization, making it a powerful utility for debugging, troubleshooting, and optimizing Kubernetes environments. 
+
+(8)
+Netperf is a command-line tool designed for benchmarking network performance, measuring metrics like throughput, latency, and transaction rates across various protocols, including TCP and UDP. 
+It follows a client-server model, where the client initiates tests, and the server responds, providing insights into network performance. 
+Netperf is widely used for network performance testing in data centers, containerized environments, and cloud infrastructures, helping to identify bottlenecks and optimize configurations. 
+Lightweight and highly configurable, it's an essential tool for network engineers and system administrators.
