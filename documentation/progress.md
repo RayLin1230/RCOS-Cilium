@@ -64,7 +64,7 @@ kubectl get nodes
 Everything seemed to work and I successfully set up Cilium to run within a Kubernetes environment using Minikube, ensuring that both systems are working together. To avoid extra costs I ran: 
 terraform destroy
 
-I downloaded the latest version of Microsoft Azure for Linux, specifiically for Ubuntu, by following the instructions on this site: https://learn.microsoft.com/en-us/cli/azure/install-azure-cli
+I downloaded the latest version of Microsoft Azure(4) for Linux, specifiically for Ubuntu, by following the instructions on this site: https://learn.microsoft.com/en-us/cli/azure/install-azure-cli
 I get the packages needed for the installation process:
 sudo apt-get update
 sudo apt-get install apt-transport-https ca-certificates curl gnupg lsb-release
@@ -109,7 +109,7 @@ https://hewlettpackard.github.io/netperf/doc/netperf.html#TCP_005fMAERTS
 
 I was given a link to the github actions/workflow that were going to be adapting for use on this project, so I read it: 
 https://github.com/cilium/cilium/tree/main/.github/workflows
-I looked into Prometheus and Grafana. I tried to understand how it works and how it applies to our project.
+I looked into Prometheus(5) and Grafana(6). I tried to understand how it works and how it applies to our project. By combining the two, we can visualize the data, along with all the features from Prometheus.
 
 *About*
 (1) Cilium is Kubernetes Cloud Network Interface(CNI). It helps manage data communication between applications in a Kubernetes cluster, enhancing security, visibility, and scalability. It does so by offering high-performance networking capabilities, including advanced routing, load balancing, and service discovery. Cilium secures traffic by controlling which applications can communicate and provides monitoring of traffic flow within the cluster.Specifically, it implements fine-grained network policies and enforces layer 7 (application layer) security controls. This enables administrators to define and enforce security policies based on application-layer attributes, such as HTTP headers or gRPC methods.  Cilium provides rich observability features by capturing detailed network traffic telemetry and integrating with monitoring and tracing systems like Prometheus and Jaeger. This enables operators to gain insights into network behavior and troubleshoot issues effectively.
@@ -117,3 +117,9 @@ I looked into Prometheus and Grafana. I tried to understand how it works and how
 (2) Kubernetes is a container orchestration. They are a platform to automate the deployment and management of containerized applications. Containers are self-contained units that hold everything an app needs to run, ensuring consistent behavior across environments. 
 
 (3) Terraform is infrastructure provisioning and creation. It automates infrastructure management using Infrastructure as Code (IaC). It defines infrastructure (servers, networks) using configuration files in HCL (HashiCorp Configuration Language). It uses providers (like Azure, AWS) to deploy infrastructure. In the context of the project, Terraform creates a Kubernetes cluster on Azure Kubernetes Service (AKS), where Cilium is deployed to manage networking.
+
+(4) Microsoft Azure is the cloud computing platform developed by Microsoft. It has management, access and development of applications and services to individuals, companies, and governments through its global infrastructure. It also provides capabilities that are usually not included within other cloud platforms, including software as a service (SaaS), platform as a service (PaaS), and infrastructure as a service (IaaS). Microsoft Azure supports many programming languages, tools, and frameworks, including Microsoft-specific and third-party software and systems.a managed kubernetes service. We use it as a managed kubernetes service. 
+
+(5) Prometheus is an open-source monitoring system with a dimensional data model, flexible query language, efficient time series database and modern alerting approach. It is a way of gathering data about your system that includes timestamps so you can track when and how everything is working. We use it for metric scraping. 
+
+(6) Grafana is a multi-platform open source analytics and interactive visualization web application. It can produce charts, graphs, and alerts for the web when connected to supported data sources. We use it for metric dashboard visualization. 
