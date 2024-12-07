@@ -56,7 +56,7 @@ sha256sum --check cilium-linux-${CLI_ARCH}.tar.gz.sha256sum
 sudo tar xzvfC cilium-linux-${CLI_ARCH}.tar.gz /usr/local/bin
 rm cilium-linux-${CLI_ARCH}.tar.gz{,.sha256sum}
 
-The document instructs me to install Kubectl(9) and miniKube and provides me a link. 
+The document instructs me to install Kubectl(9) and miniKube(10) and provides me a link. 
 I click on the link and follow the instructions. 
 
 The document instructs me on how to set up the environment and I attempt to do so. 
@@ -214,3 +214,8 @@ It allows users to manage Kubernetes resources by creating, updating, deleting, 
 With kubectl, you can deploy applications, view logs, run diagnostics, and manage network policies. 
 Its flexibility and comprehensive functionality make it an essential tool for developers and administrators working with Kubernetes to ensure efficient application management and cluster operations.
 
+(10)
+Minikube is a lightweight tool that sets up a local Kubernetes cluster on a single machine, making it ideal for development, testing, and learning. 
+It supports various container runtimes, including Docker, and runs all Kubernetes components in a virtual machine or containerized environment. 
+Minikube provides features like multi-node cluster emulation, ingress support, and add-ons for additional functionalities, allowing developers to experiment with Kubernetes without requiring a full-scale production environment. 
+Its simplicity and portability make it a popular choice for getting hands-on experience with Kubernetes.
