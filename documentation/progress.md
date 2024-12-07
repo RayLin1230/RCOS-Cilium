@@ -10,13 +10,7 @@ The document began with recommending me to use Linux or WSL. I have used Ubuntu 
 
 As instructed I opened the onboarding.md file and started reading it. As implied by the name of the file, the purpose of the file is to help newcomers like me to go through the onboarding process for the project.
 
-The document first introduces me to Cilium, Kubernetes, and Terraform. I also watched introductory videos on these new terms to better understand what they are, their use cases, and how they work together in a cloud-native environment. This helped me familiarize myself with the setup process and some key concepts behind these tools. 
-
-Kubernetes are a platform to automate the deployment and management of containerized applications. Containers are self-contained units that hold everything an app needs to run, ensuring consistent behavior across environments. 
-
-Cilium helps manage data communication between applications in a Kubernetes cluster, enhancing security, visibility, and scalability. Cilium secures traffic by controlling which applications can communicate and provides monitoring of traffic flow within the cluster.
-
-Terraform automates infrastructure management using Infrastructure as Code (IaC). It defines infrastructure (servers, networks) using configuration files in HCL (HashiCorp Configuration Language). It uses providers (like Azure, AWS) to deploy infrastructure. In the context of the project, Terraform creates a Kubernetes cluster on Azure Kubernetes Service (AKS), where Cilium is deployed to manage networking.
+The document first introduces me to Cilium(1), Kubernetes(2), and Terraform(3). I also watched introductory videos on these new terms to better understand what they are, their use cases, and how they work together in a cloud-native environment. This helped me familiarize myself with the setup process and some key concepts behind these tools. 
 
 The document then showcases the files breakdown to me:
 main.tf: Defines the core infrastructure components like resource groups, virtual networks, subnets, and Kubernetes clusters.
@@ -112,3 +106,14 @@ https://github.com/cilium/cilium-cli
 Netperf seemed to work correctly now.
 I was given documentation about Cilium Netperf, so I read it to better understand it and its role in benchmarking and performance testing:
 https://hewlettpackard.github.io/netperf/doc/netperf.html#TCP_005fMAERTS
+
+I was given a link to the github actions/workflow that were going to be adapting for use on this project, so I read it: 
+https://github.com/cilium/cilium/tree/main/.github/workflows
+I looked into Prometheus and Grafana. I tried to understand how it works and how it applies to our project.
+
+*About*
+(1) Cilium is Kubernetes Cloud Network Interface(CNI). It helps manage data communication between applications in a Kubernetes cluster, enhancing security, visibility, and scalability. It does so by offering high-performance networking capabilities, including advanced routing, load balancing, and service discovery. Cilium secures traffic by controlling which applications can communicate and provides monitoring of traffic flow within the cluster.Specifically, it implements fine-grained network policies and enforces layer 7 (application layer) security controls. This enables administrators to define and enforce security policies based on application-layer attributes, such as HTTP headers or gRPC methods.  Cilium provides rich observability features by capturing detailed network traffic telemetry and integrating with monitoring and tracing systems like Prometheus and Jaeger. This enables operators to gain insights into network behavior and troubleshoot issues effectively.
+
+(2) Kubernetes is a container orchestration. They are a platform to automate the deployment and management of containerized applications. Containers are self-contained units that hold everything an app needs to run, ensuring consistent behavior across environments. 
+
+(3) Terraform is infrastructure provisioning and creation. It automates infrastructure management using Infrastructure as Code (IaC). It defines infrastructure (servers, networks) using configuration files in HCL (HashiCorp Configuration Language). It uses providers (like Azure, AWS) to deploy infrastructure. In the context of the project, Terraform creates a Kubernetes cluster on Azure Kubernetes Service (AKS), where Cilium is deployed to manage networking.
